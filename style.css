@@ -4642,3 +4642,73 @@ img {
     min-height: 52px !important;
   }
 }
+
+@media (max-width: 760px) {
+  .welcomeBar {
+    padding-top: 4px;
+  }
+
+  .welcomeTitle {
+    margin-bottom: 6px !important;
+  }
+
+  .welcomeIntro {
+    font-size: 18px !important;
+  }
+
+  .welcomeBrand {
+    font-size: 40px !important;
+  }
+
+  .welcomeLead {
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+    max-width: 260px !important;
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .welcomeCtas {
+    max-width: 260px !important;
+    gap: 8px !important;
+    margin-top: 12px !important;
+  }
+
+  .bigCta {
+    min-height: 46px !important;
+    font-size: 14px !important;
+    border-radius: 15px !important;
+  }
+
+  .welcomeEmoji {
+    font-size: 22px !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+  }
+
+  .homeFeatures {
+    gap: 10px !important;
+    margin-top: 12px !important;
+  }
+
+  .homeFeatureCard {
+    padding: 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .homeFeatureIcon {
+    font-size: 18px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .homeFeatureCard h3 {
+    font-size: 15px !important;
+    margin-bottom: 6px !important;
+    line-height: 1.15 !important;
+  }
+
+  .homeFeatureCard p {
+    font-size: 12.5px !important;
+    line-height: 1.3 !important;
+  }
+}
