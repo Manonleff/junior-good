@@ -1,0 +1,441 @@
+  <!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Moodvie</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#07070b">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="apple-touch-icon" href="logo.png">
+
+</head>
+<body>
+
+  <!-- NETLIFY FORM (hidden) -->
+  <form name="moodvie-feedback" data-netlify="true" netlify netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="moodvie-feedback" />
+    <p><label>Don’t fill this out: <input name="bot-field" /></label></p>
+    <input name="rating" />
+    <textarea name="comment"></textarea>
+    <input name="mood" />
+    <input name="type" />
+    <input name="duration" />
+    <input name="energy" />
+    <input name="platforms" />
+  </form>
+
+  <div class="wrap">
+
+    <!-- HERO -->
+    <div class="appShell">
+  <aside class="sidebar collapsed" id="sidebar">
+  <button id="sidebarToggle" class="sidebarToggle" type="button">☰</button>
+
+  <div class="sidebarTop">
+    <div class="sidebarBrand">
+      <div class="logo">
+        <img src="logo-moodvie.png" alt="Logo Moodvie">
+      </div>
+      <div class="sidebarText">
+        <h1 class="sidebarTitle">Moodvie</h1>
+        <p class="sidebarSubtitle">Ton mood, ton film.</p>
+      </div>
+    </div>
+
+    <div class="sidebarUser">
+      <span id="userBadge" class="userBadge hidden"></span>
+    </div>
+  </div>
+
+  <nav class="sidebarNav">
+    <button id="homeBtn" class="btn navBtn ghost">🏠 <span class="navLabel">Accueil</span></button>
+    <button id="startBtn" class="btn navBtn primary">🎬 <span class="navLabel">Commencer</span></button>
+    <button id="historyBtn" class="btn navBtn ghost hidden">🕘 <span class="navLabel">Historique</span></button>
+    <button id="favoritesBtn" class="btn navBtn ghost hidden">❤️ <span class="navLabel">Mes favoris</span></button>
+    <button id="profileBtn" class="btn navBtn ghost hidden">👤 <span class="navLabel">Profil</span></button>
+    <button id="surpriseBtn" class="btn navBtn ghost hidden">🎲 <span class="navLabel">Surprends-moi</span></button>
+    <button id="aboutBtn" class="btn navBtn ghost">ℹ️ <span class="navLabel">À propos</span></button>
+  </nav>
+
+  <div class="sidebarBottom">
+    <button id="authBtn" class="btn ghost full">Connexion</button>
+    <button id="logoutBtn" class="btn ghost full hidden">Déconnexion</button>
+  </div>
+</aside>
+
+  <main class="mainContent">
+    <section id="homeSection" class="welcomeBar">
+  <div class="welcomeHero">
+    <div class="welcomeText">
+      <h1 class="welcomeTitle">
+        <span class="welcomeIntro">Bienvenue sur</span>
+        <span class="welcomeBrand">Moodvie</span>
+      </h1>
+
+      <p class="welcomeLead">
+        Dis-nous ton humeur, on te recommande le film ou la série parfaite en quelques secondes.
+      </p>
+
+      <div class="welcomeCtas">
+        <button id="startBtnHome" class="btn primary bigCta">Lancer un quiz</button>
+        <button id="authBtnHome" class="btn ghost bigCta ghostCta">Créer un compte / Connexion</button>
+      </div>
+    </div>
+
+    <div class="welcomeEmoji">
+      <span>🎬</span>
+      <span>🍿</span>
+      <span>✨</span>
+    </div>
+  </div>
+
+  <div class="homeFeatures">
+    <div class="homeFeatureCard">
+      <div class="homeFeatureIcon">🎭</div>
+      <h3>Selon ton humeur</h3>
+      <p>Tu choisis ce que tu ressens et ce que tu as envie de regarder.</p>
+    </div>
+
+    <div class="homeFeatureCard">
+      <div class="homeFeatureIcon">⚡</div>
+      <h3>Rapide et personnalisé</h3>
+      <p>Moodvie te propose un Top 5 adapté à ton énergie, ton temps et tes plateformes.</p>
+    </div>
+
+    <div class="homeFeatureCard">
+      <div class="homeFeatureIcon">❤️</div>
+      <h3>Compte personnel</h3>
+      <p>Crée un compte pour sauvegarder tes favoris, retrouver ton historique et personnaliser tes recommandations.</p>
+    </div>
+
+    <div class="homeFeatureCard">
+      <div class="homeFeatureIcon">🕘</div>
+      <h3>Historique</h3>
+      <p>Retrouve facilement tes précédents quiz et relance-les en un clic.</p>
+    </div>
+
+    <div class="homeFeatureCard">
+      <div class="homeFeatureIcon">📺</div>
+      <h3>Plateformes</h3>
+      <p>Les recommandations tiennent compte des plateformes que tu utilises déjà.</p>
+    </div>
+
+    <div class="homeFeatureCard">
+      <div class="homeFeatureIcon">🎯</div>
+      <h3>Top 5 instantané</h3>
+      <p>Tu obtiens immédiatement une sélection claire, simple et facile à comparer.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="card hidden">
+  <div class="topRow">
+    <div>
+      <h2>À propos</h2>
+      <p class="muted small">Projet Junior Consulting — PSB</p>
+    </div>
+    <button id="closeAboutBtn" class="btn ghost">✖ Fermer</button>
+  </div>
+
+  <p class="muted">
+    Moodvie est une application de recommandation de films et séries basée sur l’humeur,
+    l’envie du moment, le type de contenu recherché, la durée, l’énergie et les plateformes disponibles.
+  </p>
+
+  <div class="divider"></div>
+
+    <p><strong>Équipe :</strong> Manon, Clara, Julien, Luca, Amira</p>
+
+  <p class="muted tiny" style="margin-top:18px;">
+    Moodvie — projet étudiant (tests utilisateurs)
+  </p>
+</section>
+
+    <!-- AUTH MODAL -->
+    <div id="authModal" class="modal hidden">
+      <div class="modalCard">
+        <div class="topRow">
+          <div>
+            <h2>Compte Moodvie</h2>
+            <p class="muted small">Connecte-toi ou crée ton compte</p>
+          </div>
+          <button id="closeAuthBtn" class="btn ghost">✖</button>
+        </div>
+
+        <div class="authTabs">
+          <button id="showLoginTabBtn" class="btn ghost active" type="button">Connexion</button>
+          <button id="showSignupTabBtn" class="btn ghost" type="button">Créer un compte</button>
+        </div>
+
+        <p id="authMessage" class="muted small"></p>
+
+        <form id="loginForm" class="authForm">
+          <label class="label" for="loginEmail">Email</label>
+          <input id="loginEmail" type="email" required />
+
+          <label class="label" for="loginPassword">Mot de passe</label>
+          <input id="loginPassword" type="password" required />
+
+          <button type="submit" class="btn primary full">Se connecter</button>
+        </form>
+
+        <form id="signupForm" class="authForm hidden">
+          <label class="label" for="signupEmail">Email</label>
+          <input id="signupEmail" type="email" required />
+
+          <label class="label" for="signupPassword">Mot de passe</label>
+          <input id="signupPassword" type="password" required />
+
+          <button type="submit" class="btn primary full">Créer mon compte</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="card hidden quizCard">
+      <div class="quizTop">
+        <div>
+          <h2>Questionnaire</h2>
+          <p class="muted" id="stepText">Étape 1/6</p>
+        </div>
+
+        <div class="progressWrap" aria-label="Progression du quiz">
+          <div class="progressBar">
+            <div id="progressFill" class="progressFill" style="width: 20%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step bigChips" data-step="1">
+  <h3>1) Comment te sens-tu ?</h3>
+  <div class="chips">
+    <button class="chip" data-value="De bonne humeur">😄 De bonne humeur</button>
+    <button class="chip" data-value="Triste / émotionnel(le)">😢 Triste / émotionnel(le)</button>
+    <button class="chip" data-value="Stressé(e)">😰 Stressé(e)</button>
+    <button class="chip" data-value="Fatigué(e)">😴 Fatigué(e)</button>
+    <button class="chip" data-value="Bof / indécis(e)">😐 Bof / indécis(e)</button>
+  </div>
+  <input type="hidden" id="currentMood" value="" />
+</div>
+
+<div class="step hidden bigChips" data-step="2">
+  <h3>2) Qu’as-tu envie de ressentir ?</h3>
+  <div class="chips">
+    <button class="chip" data-value="De bonne humeur / envie de rire">😂 Envie de rire</button>
+    <button class="chip" data-value="Émotionnel(le) / besoin de réconfort">🫶 Besoin de réconfort</button>
+    <button class="chip" data-value="Stressé(e) / envie de tension">😱 Envie de suspense</button>
+    <button class="chip" data-value="Envie de réfléchir / d’être captivé(e)">🧠 Envie de réfléchir</button>
+    <button class="chip" data-value="Besoin de détente">😌 Besoin de détente</button>
+  </div>
+  <input type="hidden" id="mood" value="" />
+</div>
+
+      <div class="step hidden bigChips" data-step="3">
+        <h3>3) Tu veux plutôt…</h3>
+        <div class="chips">
+          <button class="chip" data-value="Film">🎬 Film</button>
+          <button class="chip" data-value="Série">📺 Série</button>
+          <button class="chip" data-value="Peu importe">✨ Peu importe</button>
+        </div>
+        <input type="hidden" id="type" value="Peu importe" />
+      </div>
+
+      <div class="step hidden bigChips" data-step="4">
+        <h3>4) Combien de temps ?</h3>
+        <div class="chips">
+          <button class="chip" data-value="0–45 min">⏱️ 0–45 min</button>
+          <button class="chip" data-value="45 min – 2h">🕒 45 min – 2h</button>
+          <button class="chip" data-value="+ de 2h">🕰️ + de 2h</button>
+          <button class="chip" data-value="Peu importe">✨ Peu importe</button>
+        </div>
+        <input type="hidden" id="duration" value="Peu importe" />
+      </div>
+
+      <div class="step hidden bigChips" data-step="5">
+        <h3>5) Ton énergie ?</h3>
+        <div class="chips">
+          <button class="chip" data-value="Fatigué">😮‍💨 Fatigué</button>
+          <button class="chip" data-value="Normal">🙂 Normal</button>
+          <button class="chip" data-value="Dynamique">⚡ Dynamique</button>
+        </div>
+        <input type="hidden" id="energy" value="" />
+      </div>
+
+      <div class="step hidden bigChips" data-step="6">
+        <h3>6) Tes plateformes ?</h3>
+        <p class="muted small">Tu peux en choisir plusieurs (ou aucune).</p>
+
+        <div class="chips chipsChecks">
+          <label class="chipCheck"><input type="checkbox" class="platform" value="Netflix"><span>Netflix</span></label>
+          <label class="chipCheck"><input type="checkbox" class="platform" value="Prime"><span>Prime</span></label>
+          <label class="chipCheck"><input type="checkbox" class="platform" value="Disney+"><span>Disney+</span></label>
+          <label class="chipCheck"><input type="checkbox" class="platform" value="Canal+"><span>Canal+</span></label>
+          <label class="chipCheck"><input type="checkbox" class="platform" value="Apple TV+"><span>Apple TV+</span></label>
+        </div>
+
+        <div class="tip">
+          <span class="dot"></span>
+          <span>Astuce : sélectionner une plateforme rend les résultats plus ciblés.</span>
+        </div>
+      </div>
+
+      <div class="nav">
+        <button id="prevBtn" class="btn ghost">⬅︎ Retour</button>
+        <button id="nextBtn" class="btn primary">Suivant ➜</button>
+        <button id="finishBtn" class="btn primary hidden">Voir mon Top 5 ✨</button>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="resultsSection" class="card hidden">
+      <div class="resultsTop">
+        <div>
+          <h2>Ton Top 5</h2>
+          <div id="summaryBadges" class="summaryBadges"></div>
+        </div>
+
+        <div class="resultsActions">
+  <button id="rerollBtn" class="btn primary">Relancer un Top 5</button>
+  <button id="redoBtn" class="btn ghost">Refaire le quiz</button>
+  <button id="surpriseBtnResults" class="btn ghost">Surprends-moi</button>
+</div>
+      </div>
+
+      <div id="results" class="resultsGrid"></div>
+
+      <div class="divider"></div>
+
+      <button id="toFeedbackBtn" class="btn ghost full">Donner mon avis</button>
+    </section>
+
+    <!-- FAVORITES -->
+    <section id="favoritesSection" class="card hidden">
+      <div class="topRow">
+        <div>
+          <h2>Mes favoris</h2>
+          <p class="muted small">Tes films et séries enregistrés</p>
+        </div>
+        <button id="closeFavoritesBtn" class="btn ghost">✖ Fermer</button>
+      </div>
+
+      <p id="favoritesEmpty" class="muted favoriteEmptyState">Tu n’as pas encore de favoris.</p>
+      <div id="favoritesGrid" class="resultsGrid"></div>
+    </section>
+
+    <section id="profileSection" class="card hidden">
+  <div id="profileContent"></div>
+</section>
+
+<section id="historySection" class="card hidden">
+  <div class="topRow">
+    <div>
+      <h2>Historique</h2>
+      <p class="muted small">Tes anciens quiz et profils</p>
+    </div>
+    <button id="closeHistoryBtn" class="btn ghost">✖ Fermer</button>
+  </div>
+
+  <div id="historyContent"></div>
+</section> 
+
+    <!-- DETAIL PAGE -->
+    <section id="detailSection" class="card hidden ticketCard">
+      <div class="topRow">
+        <div>
+          <h2 id="detailTitle">Détails</h2>
+          <p class="muted small" id="detailSubtitle"></p>
+        </div>
+        <button id="backToResultsFromDetail" class="btn ghost">⬅︎ Retour</button>
+      </div>
+
+      <div class="ticketCut"></div>
+
+      <div class="detailLayout">
+        <div class="detailPosterWrap">
+          <img id="detailPoster" class="detailPoster" alt="Affiche">
+        </div>
+
+        <div class="detailInfo">
+          <div class="pills" id="detailPills"></div>
+
+          <button id="detailFavBtn" class="whyBtn" type="button">🤍 Ajouter aux favoris</button>
+
+          <button id="detailTrailerBtn" class="whyBtn" type="button">🎬 Bande-annonce</button>
+          <div id="detailTrailerBox" class="trailerBox hidden"></div>
+
+          <button id="detailWatchBtn" class="whyBtn" type="button">▶ Regarder sur la plateforme</button>
+
+          <button id="detailWhyBtn" class="whyBtn" type="button">🔎 Pourquoi ce choix ?</button>
+          <div id="detailWhyBox" class="whyDetails hidden"></div>
+
+          <button id="detailSynBtn" class="whyBtn" type="button">📝 Synopsis</button>
+          <div id="detailSynBox" class="whyDetails hidden"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEEDBACK -->
+    <section id="feedback" class="card hidden">
+      <div class="topRow">
+        <div>
+          <h2>Avis</h2>
+          <p class="muted small">Ton retour nous aide à améliorer Moodvie.</p>
+        </div>
+        <button id="backToResultsBtn" class="btn ghost">⬅︎ Retour</button>
+      </div>
+
+      <form name="moodvie-feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="feedbackForm">
+        <input type="hidden" name="form-name" value="moodvie-feedback" />
+        <p class="hidden">
+          <label>Ne pas remplir : <input name="bot-field" /></label>
+        </p>
+
+        <label class="label">Note globale</label>
+        <div class="stars" role="radiogroup" aria-label="Note">
+          <input type="radio" name="rating" id="star5" value="5" required><label for="star5" title="5">★</label>
+          <input type="radio" name="rating" id="star4" value="4"><label for="star4" title="4">★</label>
+          <input type="radio" name="rating" id="star3" value="3"><label for="star3" title="3">★</label>
+          <input type="radio" name="rating" id="star2" value="2"><label for="star2" title="2">★</label>
+          <input type="radio" name="rating" id="star1" value="1"><label for="star1" title="1">★</label>
+        </div>
+
+        <label class="label" for="comment">Commentaire</label>
+        <textarea id="comment" name="comment" rows="4" placeholder="Ex: plus de plateformes, meilleur tri..." required></textarea>
+
+        <input type="hidden" name="mood" id="fb_mood">
+        <input type="hidden" name="type" id="fb_type">
+        <input type="hidden" name="duration" id="fb_duration">
+        <input type="hidden" name="energy" id="fb_energy">
+        <input type="hidden" name="platforms" id="fb_platforms">
+
+        <button type="submit" class="btn primary full">Envoyer mon avis</button>
+
+        <p id="thanksMsg" class="toast hidden">✅ Merci ! Avis envoyé.</p>
+        <p class="muted tiny">Les avis sont visibles dans Netlify → Forms.</p>
+      </form>
+    </section>
+
+    <footer class="footer muted tiny">
+      Moodvie — projet étudiant (tests utilisateurs)
+    </footer>
+  </div>
+  </main>
+</div>
+
+  <div id="loader" class="loader hidden">
+    <div class="spinner"></div>
+    <div class="muted">Analyse… on prépare ton Top 5</div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
