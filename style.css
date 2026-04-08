@@ -4210,1902 +4210,6 @@ img {
   }
 }
 
-/* ========================================
-   MOBILE FINAL FIX — BOTTOM NAV
-======================================== */
-@media (max-width: 760px) {
-  html, body {
-    overflow-x: hidden;
-  }
-
-  body {
-    -webkit-text-size-adjust: 100%;
-  }
-
-  .wrap {
-    padding: 12px 12px 110px;
-  }
-
-  .appShell {
-    display: block;
-    position: relative;
-  }
-
-  /* ===== SIDEBAR -> BARRE BASSE MOBILE ===== */
-  .sidebar {
-    position: fixed !important;
-    left: 12px !important;
-    right: 12px !important;
-    bottom: 12px !important;
-    top: auto !important;
-    width: auto !important;
-    height: 78px !important;
-    min-height: 78px;
-    padding: 10px 12px !important;
-    border-radius: 24px !important;
-    z-index: 2000;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    overflow: hidden !important;
-    backdrop-filter: blur(18px);
-    box-shadow: 0 16px 40px rgba(0,0,0,.35);
-  }
-
-  .sidebar.collapsed,
-  .appShell.sidebar-open .sidebar {
-    width: auto !important;
-    height: 78px !important;
-  }
-
-  .sidebarTop,
-  .sidebarBottom,
-  .sidebarToggle,
-  .sidebarText,
-  .sidebarUser {
-    display: none !important;
-  }
-
-  .sidebarNav {
-    width: 100%;
-    display: grid !important;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
-    margin: 0 !important;
-  }
-
-  .navBtn {
-    min-height: 54px !important;
-    height: 54px !important;
-    padding: 0 !important;
-    border-radius: 18px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 24px !important;
-    line-height: 1 !important;
-    gap: 0 !important;
-  }
-
-  .navBtn .navLabel {
-    display: none !important;
-  }
-
-  /* cache le bouton surprise de la sidebar */
-  #surpriseBtn {
-    display: none !important;
-  }
-
-  /* ===== CONTENU PLEINE LARGEUR ===== */
-  .mainContent,
-  .appShell.sidebar-open .mainContent {
-    margin-left: 0 !important;
-    width: 100% !important;
-    filter: none !important;
-    pointer-events: auto !important;
-    user-select: auto !important;
-  }
-
-  /* ===== HERO ===== */
-  .welcomeBar {
-    margin: 0 0 20px 0 !important;
-  }
-
-  .welcomeHero {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 14px !important;
-    margin-bottom: 16px !important;
-  }
-
-  .welcomeText {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-
-  .welcomeTitle {
-    margin: 0 !important;
-    line-height: .95 !important;
-  }
-
-  .welcomeIntro {
-    font-size: 20px !important;
-    line-height: 1 !important;
-  }
-
-  .welcomeBrand {
-    font-size: 44px !important;
-    line-height: .95 !important;
-    letter-spacing: -1px !important;
-  }
-
-  .welcomeLead {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-top: 10px !important;
-    font-size: 15px !important;
-    line-height: 1.4 !important;
-  }
-
-  .welcomeCtas {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-top: 14px !important;
-  }
-
-  .bigCta {
-    width: 100% !important;
-    min-height: 50px !important;
-    font-size: 15px !important;
-    padding: 0 16px !important;
-    border-radius: 16px !important;
-  }
-
-  .welcomeEmoji {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    gap: 10px !important;
-    margin-top: 4px !important;
-    font-size: 28px !important;
-  }
-
-  /* ===== CARTES HOME ===== */
-  .homeFeatures {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-    margin-top: 14px !important;
-  }
-
-  .homeFeatureCard {
-    min-height: auto !important;
-    padding: 16px !important;
-    border-radius: 20px !important;
-  }
-
-  .homeFeatureIcon {
-    font-size: 20px !important;
-    margin-bottom: 8px !important;
-  }
-
-  .homeFeatureCard h3 {
-    font-size: 18px !important;
-    margin: 0 0 8px 0 !important;
-  }
-
-  .homeFeatureCard p {
-    font-size: 14px !important;
-    line-height: 1.35 !important;
-    margin: 0 !important;
-  }
-
-  /* ===== BLOCS GÉNÉRAUX ===== */
-  #quiz,
-  #resultsSection,
-  #favoritesSection,
-  #historySection,
-  #profileSection,
-  #about,
-  #detailSection,
-  #feedback {
-    width: 100% !important;
-    margin: 0 0 18px 0 !important;
-    padding: 16px !important;
-    border-radius: 22px !important;
-  }
-
-  .quizTop,
-  .resultsTop,
-  .topRow {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
-  }
-
-  .progressWrap,
-  .progressBar {
-    width: 100% !important;
-  }
-
-  .step h3 {
-    font-size: 22px !important;
-    line-height: 1.15 !important;
-  }
-
-  .chips {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  .chip {
-    width: 100% !important;
-    min-height: 56px !important;
-    padding: 12px 14px !important;
-    font-size: 16px !important;
-    border-radius: 16px !important;
-    text-align: left !important;
-    justify-content: flex-start !important;
-  }
-
-  .nav {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-  }
-
-  .nav .btn,
-  .resultsActions .btn {
-    width: 100% !important;
-  }
-
-  .resultsActions {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
-  }
-
-  .summaryBadges {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-  }
-
-  .resultsGrid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-
-  .rcard {
-    width: 100% !important;
-    border-radius: 22px !important;
-  }
-
-  .posterWrap {
-    aspect-ratio: 2 / 3;
-  }
-
-  .rtitle {
-    font-size: 26px !important;
-    line-height: 1.05 !important;
-  }
-
-  .matchScore {
-    font-size: 14px !important;
-  }
-
-  .synBtn,
-  .favoriteSynopsisBtn {
-    min-height: 42px !important;
-    font-size: 14px !important;
-  }
-
-  /* ===== HISTORIQUE ===== */
-  .historyCard {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
-    padding: 16px !important;
-    border-radius: 20px !important;
-  }
-
-  .historyPosterWrap {
-    width: 110px !important;
-  }
-
-  .historyTitle {
-    font-size: 24px !important;
-    line-height: 1.05 !important;
-  }
-
-  /* ===== PROFIL ===== */
-  .profileMainTitle {
-    font-size: 30px !important;
-  }
-
-  .profileSubtitle {
-    font-size: 14px !important;
-  }
-
-  .profileGridClean {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-
-  .profileBox {
-    padding: 16px !important;
-    border-radius: 18px !important;
-  }
-
-  .profileBigValue {
-    font-size: 20px !important;
-    line-height: 1.15 !important;
-    word-break: break-word !important;
-  }
-
-  .profileValue {
-    font-size: 17px !important;
-  }
-
-  /* ===== DETAIL ===== */
-  .detailLayout {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-  }
-
-  .detailPosterWrap {
-    max-width: 220px !important;
-  }
-
-  #detailTitle {
-    font-size: 28px !important;
-    line-height: 1.05 !important;
-  }
-
-  .detailTypeBadge {
-    font-size: 13px !important;
-    padding: 10px 14px !important;
-  }
-
-  .detailPlatformBadge {
-    font-size: 13px !important;
-    padding: 8px 12px !important;
-  }
-
-  /* ===== MODALE ===== */
-  .modalCard {
-    width: calc(100% - 24px) !important;
-    max-width: 100% !important;
-    padding: 16px !important;
-    border-radius: 20px !important;
-  }
-
-  .authTabs {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-  }
-
-  .authTabs .btn,
-  .authForm .btn {
-    width: 100% !important;
-  }
-}
-
-@media (max-width: 430px) {
-  .welcomeBrand {
-    font-size: 38px !important;
-  }
-
-  .welcomeIntro {
-    font-size: 18px !important;
-  }
-
-  .welcomeLead {
-    font-size: 14px !important;
-  }
-
-  .welcomeEmoji {
-    font-size: 24px !important;
-  }
-
-  .bigCta {
-    font-size: 14px !important;
-  }
-
-  .homeFeatureCard h3 {
-    font-size: 16px !important;
-  }
-
-  .homeFeatureCard p {
-    font-size: 13px !important;
-  }
-
-  .step h3 {
-    font-size: 20px !important;
-  }
-
-  .chip {
-    font-size: 14px !important;
-    min-height: 52px !important;
-  }
-}
-
-@media (max-width: 760px) {
-  .welcomeBar {
-    padding-top: 4px;
-  }
-
-  .welcomeTitle {
-    margin-bottom: 6px !important;
-  }
-
-  .welcomeIntro {
-    font-size: 18px !important;
-  }
-
-  .welcomeBrand {
-    font-size: 40px !important;
-  }
-
-  .welcomeLead {
-    font-size: 14px !important;
-    line-height: 1.35 !important;
-    max-width: 260px !important;
-    margin-top: 8px !important;
-    margin-bottom: 0 !important;
-  }
-
-  .welcomeCtas {
-    max-width: 260px !important;
-    gap: 8px !important;
-    margin-top: 12px !important;
-  }
-
-  .bigCta {
-    min-height: 46px !important;
-    font-size: 14px !important;
-    border-radius: 15px !important;
-  }
-
-  .welcomeEmoji {
-    font-size: 22px !important;
-    gap: 8px !important;
-    margin-top: 8px !important;
-  }
-
-  .homeFeatures {
-    gap: 10px !important;
-    margin-top: 12px !important;
-  }
-
-  .homeFeatureCard {
-    padding: 14px !important;
-    border-radius: 18px !important;
-  }
-
-  .homeFeatureIcon {
-    font-size: 18px !important;
-    margin-bottom: 6px !important;
-  }
-
-  .homeFeatureCard h3 {
-    font-size: 15px !important;
-    margin-bottom: 6px !important;
-    line-height: 1.15 !important;
-  }
-
-  .homeFeatureCard p {
-    font-size: 12.5px !important;
-    line-height: 1.3 !important;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .welcomeHero {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .welcomeText {
-    max-width: 100%;
-  }
-
-  .welcomeText h1 {
-    font-size: 28px;
-    line-height: 1.2;
-  }
-
-  .welcomeText p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .welcomeCtas {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .welcomeCtas .btn {
-    width: 100%;
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .welcomeEmoji {
-    font-size: 24px;
-    margin-top: 10px;
-  }
-
-  .homeFeatures {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .homeFeatureCard {
-    width: 100%;
-    padding: 15px;
-  }
-}
-
-.sidebar {
-  width: 70px;
-  transition: 0.3s;
-  overflow: hidden;
-}
-
-.sidebar.open {
-  width: 200px;
-}
-
-.navLabel {
-  opacity: 0;
-  margin-left: 10px;
-  transition: 0.3s;
-}
-
-.sidebar.open .navLabel {
-  opacity: 1;
-}
-
-@media (max-width: 768px) {
-
-  .sidebar {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    border-radius: 20px;
-    padding: 5px;
-  }
-
-  .sidebar.open {
-    height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
-  }
-
-  .navBtn {
-    flex: 1;
-    justify-content: center;
-  }
-
-  .sidebar.open .navBtn {
-    justify-content: flex-start;
-  }
-}
-
-.menuBtn {
-  background: transparent;
-  border: none;
-  font-size: 22px;
-  color: white;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.sidebar .navLabel {
-  display: none;
-}
-
-.sidebar.open .navLabel {
-  display: inline;
-}
-
-/* =========================
-   MOBILE FINAL CLEAN
-========================= */
-@media (max-width: 768px) {
-  .wrap {
-    padding: 16px 16px 120px;
-  }
-
-  .appShell {
-    display: block;
-  }
-
-  .mainContent,
-  .appShell.sidebar-open .mainContent {
-    margin-left: 0 !important;
-    width: 100% !important;
-    filter: none !important;
-    pointer-events: auto !important;
-    user-select: auto !important;
-  }
-
-  /* BARRE MOBILE FERMÉE */
-  .sidebar {
-    position: fixed !important;
-    left: 12px !important;
-    right: 12px !important;
-    bottom: 12px !important;
-    top: auto !important;
-    width: auto !important;
-    height: 88px !important;
-    min-height: 88px !important;
-    padding: 12px !important;
-    border-radius: 26px !important;
-    z-index: 3000 !important;
-    overflow: hidden !important;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 18px 40px rgba(0,0,0,.28);
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-  }
-
-  .sidebarTop,
-  .sidebarBottom,
-  .sidebarText,
-  .sidebarUser,
-  .sidebarBrand,
-  .sidebarToggle {
-    display: none !important;
-  }
-
-  .mobileMenuBtn {
-    display: block !important;
-    width: 100%;
-    min-height: 40px;
-    margin: 0 0 10px 0;
-    border: none;
-    border-radius: 16px;
-    background: rgba(255,255,255,.08);
-    color: white;
-    font-size: 15px;
-    font-weight: 700;
-  }
-
-  .sidebarNav {
-    display: grid !important;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px !important;
-    margin: 0 !important;
-    width: 100% !important;
-  }
-
-  .navBtn {
-    min-height: 54px !important;
-    height: 54px !important;
-    border-radius: 18px !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 0 !important;
-    font-size: 24px !important;
-    line-height: 1 !important;
-  }
-
-  .navBtn .navLabel {
-    display: none !important;
-  }
-
-  .navBtn .icon {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* BARRE MOBILE OUVERTE */
-  .sidebar.open {
-    height: auto !important;
-    min-height: 420px !important;
-    padding: 14px !important;
-  }
-
-  .sidebar.open .sidebarNav {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  .sidebar.open .navBtn {
-    justify-content: flex-start !important;
-    padding: 0 16px !important;
-    font-size: 18px !important;
-    gap: 12px !important;
-  }
-
-  .sidebar.open .navBtn .navLabel {
-    display: inline !important;
-    font-size: 16px !important;
-    font-weight: 700;
-  }
-
-  /* HOME MOBILE */
-  .welcomeBar {
-    margin: 0 0 18px 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  .welcomeHero {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
-    margin-bottom: 14px !important;
-  }
-
-  .welcomeText {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .welcomeTitle {
-    margin: 0 0 6px 0 !important;
-    line-height: .95 !important;
-  }
-
-  .welcomeIntro {
-    display: block !important;
-    font-size: 18px !important;
-    line-height: 1 !important;
-  }
-
-  .welcomeBrand {
-    display: block !important;
-    font-size: 46px !important;
-    line-height: .95 !important;
-    letter-spacing: -1px !important;
-  }
-
-  .welcomeLead {
-    max-width: 100% !important;
-    width: 100% !important;
-    font-size: 16px !important;
-    line-height: 1.35 !important;
-    margin: 0 !important;
-  }
-
-  .welcomeCtas {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
-    margin-top: 8px !important;
-  }
-
-  .bigCta {
-    width: 100% !important;
-    min-height: 52px !important;
-    font-size: 16px !important;
-    border-radius: 18px !important;
-  }
-
-  .welcomeEmoji {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-    gap: 10px !important;
-    font-size: 26px !important;
-    margin-top: 2px !important;
-  }
-
-  /* CARTES HOME */
-  .homeFeatures {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-    margin-top: 14px !important;
-  }
-
-  .homeFeatureCard {
-    min-height: auto !important;
-    padding: 16px !important;
-    border-radius: 20px !important;
-  }
-
-  .homeFeatureCard h3 {
-    font-size: 18px !important;
-    margin-bottom: 6px !important;
-  }
-
-  .homeFeatureCard p {
-    font-size: 14px !important;
-    line-height: 1.3 !important;
-  }
-
-  /* BLOCS GÉNÉRAUX */
-  #quiz,
-  #resultsSection,
-  #favoritesSection,
-  #historySection,
-  #profileSection,
-  #about,
-  #detailSection,
-  #feedback {
-    width: 100% !important;
-    margin: 0 0 18px 0 !important;
-    padding: 16px !important;
-    border-radius: 22px !important;
-  }
-
-  .step h3 {
-    font-size: 22px !important;
-    line-height: 1.15 !important;
-  }
-
-  .chips {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  .chip {
-    min-height: 58px !important;
-    font-size: 16px !important;
-  }
-
-  .resultsGrid,
-  .profileGridClean {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-}
-
-/* =========================
-   MOBILE SIMPLE ET PROPRE
-========================= */
-@media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden;
-  }
-
-  .wrap {
-    padding: 14px 14px 120px;
-  }
-
-  .appShell {
-    display: block;
-  }
-
-  .mainContent,
-  .appShell.sidebar-open .mainContent {
-    margin-left: 0 !important;
-    width: 100% !important;
-  }
-
-  .sidebar,
-  .sidebar.collapsed,
-  .appShell.sidebar-open .sidebar {
-    position: fixed !important;
-    left: 10px !important;
-    right: 10px !important;
-    bottom: 10px !important;
-    top: auto !important;
-    width: auto !important;
-    height: 78px !important;
-    min-height: 78px !important;
-    padding: 10px !important;
-    border-radius: 24px !important;
-    z-index: 3000 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    overflow: hidden !important;
-    backdrop-filter: blur(18px);
-    box-shadow: 0 16px 36px rgba(0,0,0,.28);
-  }
-
-  .sidebarTop,
-  .sidebarBottom,
-  .sidebarText,
-  .sidebarUser,
-  .sidebarToggle {
-    display: none !important;
-  }
-
-  .sidebarNav {
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: repeat(6, 1fr) !important;
-    gap: 8px !important;
-    margin: 0 !important;
-  }
-
-  .navBtn {
-    min-height: 54px !important;
-    height: 54px !important;
-    border-radius: 18px !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 0 !important;
-    font-size: 22px !important;
-    line-height: 1 !important;
-  }
-
-  .navBtn .navLabel {
-    display: none !important;
-  }
-
-  .navBtn .icon {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .welcomeBar {
-    margin: 0 0 18px 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  .welcomeHero {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
-    margin-bottom: 14px !important;
-  }
-
-  .welcomeText {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .welcomeTitle {
-    margin: 0 0 6px 0 !important;
-    line-height: .95 !important;
-  }
-
-  .welcomeIntro {
-    font-size: 18px !important;
-    line-height: 1 !important;
-  }
-
-  .welcomeBrand {
-    font-size: 44px !important;
-    line-height: .95 !important;
-    letter-spacing: -1px !important;
-  }
-
-  .welcomeLead {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 16px !important;
-    line-height: 1.35 !important;
-    margin: 0 !important;
-  }
-
-  .welcomeCtas {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
-    margin-top: 8px !important;
-  }
-
-  .bigCta {
-    width: 100% !important;
-    min-height: 50px !important;
-    font-size: 16px !important;
-    border-radius: 18px !important;
-  }
-
-  .welcomeEmoji {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-    gap: 10px !important;
-    font-size: 26px !important;
-    margin-top: 4px !important;
-  }
-
-  .homeFeatures {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-    margin-top: 14px !important;
-  }
-
-  .homeFeatureCard {
-    min-height: auto !important;
-    padding: 16px !important;
-    border-radius: 20px !important;
-  }
-
-  .homeFeatureCard h3 {
-    font-size: 18px !important;
-    margin-bottom: 6px !important;
-  }
-
-  .homeFeatureCard p {
-    font-size: 15px !important;
-    line-height: 1.35 !important;
-  }
-
-  #quiz,
-  #resultsSection,
-  #favoritesSection,
-  #historySection,
-  #profileSection,
-  #about,
-  #detailSection,
-  #feedback {
-    width: 100% !important;
-    margin: 0 0 18px 0 !important;
-    padding: 16px !important;
-    border-radius: 22px !important;
-  }
-
-  .step h3 {
-    font-size: 22px !important;
-    line-height: 1.15 !important;
-  }
-
-  .chips {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  .chip {
-    min-height: 58px !important;
-    font-size: 16px !important;
-  }
-
-  .resultsGrid,
-  .profileGridClean {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-}
-
-@media (max-width: 430px) {
-  .wrap {
-    padding: 12px 12px 112px;
-  }
-
-  .sidebar,
-  .sidebar.collapsed,
-  .appShell.sidebar-open .sidebar {
-    left: 8px !important;
-    right: 8px !important;
-    bottom: 8px !important;
-    height: 72px !important;
-    min-height: 72px !important;
-    padding: 8px !important;
-  }
-
-  .sidebarNav {
-    gap: 6px !important;
-  }
-
-  .navBtn {
-    min-height: 50px !important;
-    height: 50px !important;
-    font-size: 20px !important;
-    border-radius: 16px !important;
-  }
-
-  .welcomeIntro {
-    font-size: 17px !important;
-  }
-
-  .welcomeBrand {
-    font-size: 40px !important;
-  }
-
-  .welcomeLead {
-    font-size: 15px !important;
-  }
-
-  .bigCta {
-    min-height: 48px !important;
-    font-size: 15px !important;
-  }
-
-  .welcomeEmoji {
-    font-size: 24px !important;
-  }
-
-  .homeFeatureCard h3 {
-    font-size: 17px !important;
-  }
-
-  .homeFeatureCard p {
-    font-size: 14px !important;
-  }
-
-  .step h3 {
-    font-size: 20px !important;
-  }
-
-  .chip {
-    min-height: 54px !important;
-    font-size: 15px !important;
-  }
-}
-
-/* Desktop : sidebar fermée = pas de texte */
-.sidebar.collapsed .navLabel,
-.sidebar.collapsed .sidebarText,
-.sidebar.collapsed .sidebarUser,
-.sidebar.collapsed .sidebarBottom .btn.full {
-  display: none;
-}
-
-/* Desktop : sidebar ouverte = texte visible */
-.sidebar:not(.collapsed) .navLabel,
-.sidebar:not(.collapsed) .sidebarText,
-.sidebar:not(.collapsed) .sidebarUser,
-.sidebar:not(.collapsed) .sidebarBottom .btn.full {
-  display: inline;
-}
-
-/* Les boutons ouverts s'alignent bien */
-.sidebar:not(.collapsed) .navBtn {
-  justify-content: flex-start;
-  gap: 12px;
-  padding: 0 16px;
-}
-
-/* Les boutons fermés restent centrés */
-.sidebar.collapsed .navBtn {
-  justify-content: center;
-  padding: 0;
-}
-
-/* ===== FORCE SIDEBAR DESKTOP ===== */
-@media (min-width: 769px) {
-  .sidebar:not(.collapsed) .navLabel {
-    display: inline !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
-
-  .sidebar.collapsed .navLabel {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-
-  .sidebar:not(.collapsed) .navBtn {
-    justify-content: flex-start !important;
-    gap: 12px !important;
-    padding: 0 16px !important;
-  }
-
-  .sidebar.collapsed .navBtn {
-    justify-content: center !important;
-    gap: 0 !important;
-    padding: 0 !important;
-  }
-
-  .sidebar:not(.collapsed) .sidebarText,
-  .sidebar:not(.collapsed) .sidebarUser,
-  .sidebar:not(.collapsed) .sidebarBottom {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
-
-  .sidebar.collapsed .sidebarText,
-  .sidebar.collapsed .sidebarUser,
-  .sidebar.collapsed .sidebarBottom {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-}
-
-/* =========================================
-   MOBILE MODE PROPRE ET COMPLET
-========================================= */
-@media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden;
-  }
-
-  body {
-    -webkit-text-size-adjust: 100%;
-  }
-
-  .wrap {
-    padding: 14px 14px 110px;
-  }
-
-  .appShell {
-    display: block !important;
-    position: relative;
-  }
-
-  .mainContent,
-  .appShell.sidebar-open .mainContent {
-    margin-left: 0 !important;
-    width: 100% !important;
-    filter: none !important;
-    pointer-events: auto !important;
-    user-select: auto !important;
-  }
-
-  /* ===== SIDEBAR MOBILE FERMÉE = BARRE EN BAS ===== */
-  .sidebar {
-    position: fixed !important;
-    left: 10px !important;
-    right: 10px !important;
-    bottom: 10px !important;
-    top: auto !important;
-    width: auto !important;
-    height: 84px !important;
-    min-height: 84px !important;
-    padding: 10px !important;
-    border-radius: 24px !important;
-    z-index: 4000 !important;
-    backdrop-filter: blur(18px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-  }
-
-  .sidebar.collapsed {
-    width: auto !important;
-    height: 84px !important;
-  }
-
-  /* On masque les blocs desktop */
-  .sidebarBrand,
-  .sidebarText,
-  .sidebarUser,
-  .sidebarBottom {
-    display: none !important;
-  }
-
-  .sidebarTop {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    margin-bottom: 8px !important;
-  }
-
-  .sidebarToggle {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 14px !important;
-    font-size: 22px !important;
-    flex: 0 0 auto;
-  }
-
-  .sidebarNav {
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: repeat(6, 1fr) !important;
-    gap: 8px !important;
-    margin: 0 !important;
-  }
-
-  .navBtn {
-    min-height: 48px !important;
-    height: 48px !important;
-    border-radius: 16px !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 0 !important;
-    font-size: 22px !important;
-    line-height: 1 !important;
-  }
-
-  .navBtn .icon {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .navBtn .navLabel {
-    display: none !important;
-  }
-
-  /* ===== SIDEBAR MOBILE OUVERTE ===== */
-  .sidebar.mobile-open {
-    height: auto !important;
-    min-height: 420px !important;
-    padding: 12px !important;
-  }
-
-  .sidebar.mobile-open .sidebarTop {
-    margin-bottom: 12px !important;
-  }
-
-  .sidebar.mobile-open .sidebarNav {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  .sidebar.mobile-open .navBtn {
-    justify-content: flex-start !important;
-    gap: 12px !important;
-    padding: 0 16px !important;
-    font-size: 18px !important;
-  }
-
-  .sidebar.mobile-open .navBtn .navLabel {
-    display: inline !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-  }
-
-  /* Si la sidebar mobile est ouverte, le contenu en dessous reste visible
-     mais on évite les clics involontaires */
-  .sidebar.mobile-open ~ .mainContent {
-    pointer-events: none;
-    user-select: none;
-  }
-
-  /* ===== HOME MOBILE ===== */
-  .welcomeBar {
-    margin: 0 0 18px 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  .welcomeHero {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 14px !important;
-    margin-bottom: 16px !important;
-  }
-
-  .welcomeText {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-
-  .welcomeTitle {
-    margin: 0 0 8px 0 !important;
-    line-height: 0.95 !important;
-  }
-
-  .welcomeIntro {
-    display: block !important;
-    font-size: 18px !important;
-    line-height: 1 !important;
-  }
-
-  .welcomeBrand {
-    display: block !important;
-    font-size: clamp(38px, 10vw, 54px) !important;
-    line-height: 0.95 !important;
-    letter-spacing: -1px !important;
-  }
-
-  .welcomeLead {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: clamp(15px, 3.8vw, 18px) !important;
-    line-height: 1.35 !important;
-    margin: 0 !important;
-  }
-
-  .welcomeCtas {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
-    margin-top: 8px !important;
-  }
-
-  .bigCta {
-    width: 100% !important;
-    min-height: 52px !important;
-    font-size: clamp(15px, 4vw, 17px) !important;
-    border-radius: 18px !important;
-  }
-
-  .welcomeEmoji {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    gap: 10px !important;
-    font-size: clamp(22px, 6vw, 30px) !important;
-    margin-top: 2px !important;
-  }
-
-  .homeFeatures {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-    margin-top: 14px !important;
-  }
-
-  .homeFeatureCard {
-    min-height: auto !important;
-    padding: 16px !important;
-    border-radius: 20px !important;
-  }
-
-  .homeFeatureCard h3 {
-    font-size: clamp(17px, 4.4vw, 20px) !important;
-    margin-bottom: 6px !important;
-  }
-
-  .homeFeatureCard p {
-    font-size: clamp(14px, 3.6vw, 16px) !important;
-    line-height: 1.35 !important;
-  }
-
-  /* ===== BLOCS GÉNÉRAUX ===== */
-  #quiz,
-  #resultsSection,
-  #favoritesSection,
-  #historySection,
-  #profileSection,
-  #about,
-  #detailSection,
-  #feedback {
-    width: 100% !important;
-    margin: 0 0 18px 0 !important;
-    padding: 16px !important;
-    border-radius: 22px !important;
-  }
-
-  .quizTop,
-  .resultsTop,
-  .topRow {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
-  }
-
-  .progressWrap,
-  .progressBar {
-    width: 100% !important;
-  }
-
-  .step h3 {
-    font-size: clamp(20px, 5vw, 24px) !important;
-    line-height: 1.15 !important;
-  }
-
-  .chips {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  .chip {
-    min-height: 58px !important;
-    font-size: clamp(15px, 4vw, 17px) !important;
-  }
-
-  .nav {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-  }
-
-  .nav .btn,
-  .resultsActions .btn {
-    width: 100% !important;
-  }
-
-  .resultsActions {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
-  }
-
-  .summaryBadges {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-  }
-
-  .resultsGrid,
-  .profileGridClean {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-
-  .profileBigValue {
-    word-break: break-word !important;
-  }
-
-  .detailLayout {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-  }
-
-  .detailPosterWrap {
-    max-width: 220px !important;
-  }
-
-  .modalCard {
-    width: calc(100% - 24px) !important;
-    max-width: 100% !important;
-    padding: 16px !important;
-    border-radius: 20px !important;
-  }
-}
-
-@media (max-width: 430px) {
-  .wrap {
-    padding: 12px 12px 106px;
-  }
-
-  .sidebar,
-  .sidebar.collapsed {
-    left: 8px !important;
-    right: 8px !important;
-    bottom: 8px !important;
-    height: 76px !important;
-    min-height: 76px !important;
-    padding: 8px !important;
-  }
-
-  .sidebar.mobile-open {
-    min-height: 390px !important;
-  }
-
-  .sidebarNav {
-    gap: 6px !important;
-  }
-
-  .navBtn {
-    min-height: 46px !important;
-    height: 46px !important;
-    font-size: 20px !important;
-    border-radius: 15px !important;
-  }
-
-  .sidebar.mobile-open .navBtn {
-    font-size: 17px !important;
-  }
-
-  .sidebar.mobile-open .navBtn .navLabel {
-    font-size: 15px !important;
-  }
-
-  .welcomeIntro {
-    font-size: 17px !important;
-  }
-
-  .welcomeLead {
-    font-size: 15px !important;
-  }
-
-  .bigCta {
-    min-height: 48px !important;
-    font-size: 15px !important;
-  }
-
-  .welcomeEmoji {
-    font-size: 24px !important;
-  }
-}
-
-/* =========================
-   MOBILE FINAL SIMPLE
-========================= */
-@media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden;
-  }
-
-  .wrap {
-    padding: 16px 16px 110px;
-  }
-
-  .appShell {
-    display: block !important;
-  }
-
-  .mainContent,
-  .appShell.sidebar-open .mainContent {
-    margin-left: 0 !important;
-    width: 100% !important;
-  }
-
-  /* CACHE LA SIDEBAR DESKTOP */
-  .sidebarTop,
-  .sidebarBottom,
-  .sidebarText,
-  .sidebarUser,
-  .sidebarToggle {
-    display: none !important;
-  }
-
-  /* BARRE DU BAS MOBILE */
-  .sidebar,
-  .sidebar.collapsed,
-  .appShell.sidebar-open .sidebar {
-    position: fixed !important;
-    left: 10px !important;
-    right: 10px !important;
-    bottom: 10px !important;
-    top: auto !important;
-    width: auto !important;
-    height: auto !important;
-    min-height: 74px !important;
-    padding: 10px !important;
-    border-radius: 24px !important;
-    z-index: 3000 !important;
-    display: block !important;
-    overflow: hidden !important;
-    backdrop-filter: blur(18px);
-    box-shadow: 0 16px 36px rgba(0,0,0,.28);
-  }
-
-  .sidebarNav {
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 8px !important;
-    margin: 0 !important;
-  }
-
-  .navBtn {
-    min-height: 52px !important;
-    height: 52px !important;
-    border-radius: 16px !important;
-    padding: 8px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 4px !important;
-    font-size: 18px !important;
-    line-height: 1 !important;
-    text-align: center !important;
-  }
-
-  .navBtn .icon {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px !important;
-  }
-
-  .navBtn .navLabel {
-    display: block !important;
-    font-size: 11px !important;
-    line-height: 1.1 !important;
-    font-weight: 700 !important;
-    white-space: nowrap;
-  }
-
-  /* HOME */
-  .welcomeBar {
-    margin: 0 0 18px 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  .welcomeHero {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 14px !important;
-    margin-bottom: 16px !important;
-  }
-
-  .welcomeText {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .welcomeTitle {
-    margin: 0 0 8px 0 !important;
-  }
-
-  .welcomeIntro {
-    display: block !important;
-    font-size: 18px !important;
-    line-height: 1 !important;
-  }
-
-  .welcomeBrand {
-    display: block !important;
-    font-size: 46px !important;
-    line-height: .95 !important;
-    letter-spacing: -1px !important;
-  }
-
-  .welcomeLead {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 16px !important;
-    line-height: 1.35 !important;
-    margin: 0 !important;
-  }
-
-  .welcomeCtas {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
-    margin-top: 8px !important;
-  }
-
-  .bigCta {
-    width: 100% !important;
-    min-height: 50px !important;
-    font-size: 16px !important;
-    border-radius: 18px !important;
-  }
-
-  .welcomeEmoji {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-    gap: 10px !important;
-    font-size: 24px !important;
-    margin-top: 2px !important;
-  }
-
-  .homeFeatures {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-    margin-top: 14px !important;
-  }
-
-  .homeFeatureCard {
-    min-height: auto !important;
-    padding: 16px !important;
-    border-radius: 20px !important;
-  }
-
-  .homeFeatureCard h3 {
-    font-size: 18px !important;
-    margin-bottom: 6px !important;
-  }
-
-  .homeFeatureCard p {
-    font-size: 15px !important;
-    line-height: 1.35 !important;
-  }
-
-  /* BLOCS GÉNÉRAUX */
-  #quiz,
-  #resultsSection,
-  #favoritesSection,
-  #historySection,
-  #profileSection,
-  #about,
-  #detailSection,
-  #feedback {
-    width: 100% !important;
-    margin: 0 0 18px 0 !important;
-    padding: 16px !important;
-    border-radius: 22px !important;
-  }
-
-  .chips {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  .chip {
-    min-height: 56px !important;
-    font-size: 16px !important;
-  }
-
-  .resultsGrid,
-  .profileGridClean {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-}
-
-@media (max-width: 430px) {
-  .wrap {
-    padding: 12px 12px 104px;
-  }
-
-  .sidebar,
-  .sidebar.collapsed,
-  .appShell.sidebar-open .sidebar {
-    left: 8px !important;
-    right: 8px !important;
-    bottom: 8px !important;
-    padding: 8px !important;
-  }
-
-  .sidebarNav {
-    gap: 6px !important;
-  }
-
-  .navBtn {
-    min-height: 50px !important;
-    height: 50px !important;
-    padding: 6px !important;
-  }
-
-  .navBtn .navLabel {
-    font-size: 10px !important;
-  }
-
-  .welcomeBrand {
-    font-size: 40px !important;
-  }
-
-  .welcomeLead {
-    font-size: 15px !important;
-  }
-
-  .bigCta {
-    min-height: 48px !important;
-    font-size: 15px !important;
-  }
-
-  .homeFeatureCard h3 {
-    font-size: 17px !important;
-  }
-
-  .homeFeatureCard p {
-    font-size: 14px !important;
-  }
-}
-
 /* ===== FORCE SIDEBAR DESKTOP ===== */
 @media (min-width: 769px) {
   .sidebar {
@@ -6999,6 +5103,341 @@ img {
   .chip,
   .chipCheck {
     min-height: 54px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* =========================================
+   MOBILE CLEAN FINAL
+========================================= */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    padding: 12px 12px 20px;
+  }
+
+  .appShell {
+    display: block !important;
+    position: relative;
+  }
+
+  /* SIDEBAR À GAUCHE */
+  .sidebar {
+    position: fixed !important;
+    top: 12px !important;
+    left: 12px !important;
+    bottom: 12px !important;
+    width: 72px !important;
+    height: auto !important;
+    min-height: calc(100vh - 24px) !important;
+    padding: 12px 8px !important;
+    border-radius: 24px !important;
+    z-index: 3000 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: width .25s ease !important;
+  }
+
+  .sidebar.collapsed {
+    width: 72px !important;
+  }
+
+  .appShell.sidebar-open .sidebar {
+    width: 230px !important;
+  }
+
+  .sidebarToggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    margin: 0 auto 14px auto !important;
+    border-radius: 14px !important;
+  }
+
+  .sidebarTop {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .sidebarBrand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .sidebarNav {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: 18px !important;
+    align-items: stretch !important;
+  }
+
+  .navBtn {
+    width: 100% !important;
+    min-height: 52px !important;
+    border-radius: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .sidebar.collapsed .navBtn {
+    justify-content: center !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+
+  .appShell.sidebar-open .navBtn {
+    justify-content: flex-start !important;
+    padding: 0 14px !important;
+    gap: 12px !important;
+  }
+
+  .sidebar.collapsed .sidebarText,
+  .sidebar.collapsed .sidebarUser,
+  .sidebar.collapsed .sidebarBottom,
+  .sidebar.collapsed .navLabel {
+    display: none !important;
+  }
+
+  .appShell.sidebar-open .sidebarText,
+  .appShell.sidebar-open .sidebarUser,
+  .appShell.sidebar-open .sidebarBottom,
+  .appShell.sidebar-open .navLabel {
+    display: block !important;
+  }
+
+  /* CONTENU */
+  .mainContent,
+  .appShell.sidebar-open .mainContent {
+    margin-left: 88px !important;
+    width: calc(100% - 88px) !important;
+    min-width: 0 !important;
+  }
+
+  /* HOME */
+  .welcomeBar {
+    margin: 0 0 18px 0 !important;
+    padding: 18px !important;
+    border-radius: 24px !important;
+  }
+
+  .welcomeHero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 14px !important;
+    min-height: auto !important;
+    margin-bottom: 18px !important;
+  }
+
+  .welcomeText {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .welcomeTitle {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    margin: 0 !important;
+    line-height: .95 !important;
+  }
+
+  .welcomeIntro {
+    font-size: 24px !important;
+    line-height: 1 !important;
+  }
+
+  .welcomeBrand {
+    font-size: 58px !important;
+    line-height: .95 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .welcomeLead {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+
+  .welcomeCtas {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 330px !important;
+    margin: 0 auto !important;
+  }
+
+  .bigCta {
+    width: 100% !important;
+    min-height: 52px !important;
+    font-size: 16px !important;
+    padding: 0 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .welcomeEmoji {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    font-size: 30px !important;
+    margin-top: 2px !important;
+  }
+
+  .homeFeatures {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 10px !important;
+  }
+
+  .homeFeatureCard {
+    min-height: auto !important;
+    padding: 18px !important;
+    border-radius: 22px !important;
+  }
+
+  .homeFeatureCard h3 {
+    font-size: 20px !important;
+    margin: 0 0 8px 0 !important;
+  }
+
+  .homeFeatureCard p {
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+  }
+
+  /* BLOCS GÉNÉRAUX */
+  #quiz,
+  #resultsSection,
+  #favoritesSection,
+  #historySection,
+  #profileSection,
+  #about,
+  #detailSection,
+  #feedback {
+    width: 100% !important;
+    margin: 0 0 18px 0 !important;
+    padding: 18px !important;
+    border-radius: 24px !important;
+  }
+
+  .quizTop,
+  .resultsTop,
+  .topRow {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .progressWrap,
+  .progressBar {
+    width: 100% !important;
+  }
+
+  .chips {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .chip,
+  .chipCheck {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 58px !important;
+    padding: 14px 16px !important;
+    font-size: 15px !important;
+  }
+
+  .resultsActions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .resultsActions .btn,
+  .nav .btn {
+    width: 100% !important;
+  }
+
+  .resultsGrid,
+  #favoritesGrid,
+  .profileGridClean {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .detailLayout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+
+  .detailPoster {
+    max-width: 240px !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .sidebar,
+  .sidebar.collapsed {
+    width: 66px !important;
+  }
+
+  .appShell.sidebar-open .sidebar {
+    width: 210px !important;
+  }
+
+  .mainContent,
+  .appShell.sidebar-open .mainContent {
+    margin-left: 82px !important;
+    width: calc(100% - 82px) !important;
+  }
+
+  .welcomeBrand {
+    font-size: 48px !important;
+  }
+
+  .welcomeIntro {
+    font-size: 21px !important;
+  }
+
+  .welcomeLead {
+    font-size: 14px !important;
+  }
+
+  .bigCta {
+    font-size: 15px !important;
+    min-height: 48px !important;
+  }
+
+  .homeFeatureCard h3 {
+    font-size: 18px !important;
+  }
+
+  .homeFeatureCard p {
     font-size: 14px !important;
   }
 }
