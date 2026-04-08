@@ -2026,14 +2026,6 @@ closeFavoritesBtn.addEventListener("click", () => {
   }
 });
 
-authBtn.addEventListener("click", () => {
-  if (!hasSupabase()) {
-    alert("Ajoute d’abord ton SUPABASE_URL et ta publishable key dans le script.js.");
-    return;
-  }
-  openAuthModal();
-});
-
 if (authBtn) {
   authBtn.addEventListener("click", () => {
     if (!hasSupabase()) {
@@ -2211,15 +2203,8 @@ feedbackForm.addEventListener("submit", async (e) => {
 
 if (sidebar && sidebarToggle && appShell) {
   sidebarToggle.addEventListener("click", () => {
-    const isMobile = window.innerWidth <= 768;
-
-    if (isMobile) {
-      sidebar.classList.toggle("mobile-open");
-      appShell.classList.toggle("sidebar-open");
-    } else {
-      sidebar.classList.toggle("collapsed");
-      appShell.classList.toggle("sidebar-open");
-    }
+    sidebar.classList.toggle("collapsed");
+    appShell.classList.toggle("sidebar-open");
   });
 }
 
@@ -2244,16 +2229,3 @@ if (surpriseBtnResults) {
   });
 }
 
-const toggleBtn = document.getElementById("menuBtn");
-
-if (toggleBtn && sidebar) {
-  toggleBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-  });
-}
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 768) {
-    sidebar?.classList.remove("mobile-open");
-  }
-});

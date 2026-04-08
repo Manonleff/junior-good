@@ -5839,3 +5839,669 @@ img {
     font-size: 24px !important;
   }
 }
+
+/* =========================
+   MOBILE FINAL SIMPLE
+========================= */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    padding: 16px 16px 110px;
+  }
+
+  .appShell {
+    display: block !important;
+  }
+
+  .mainContent,
+  .appShell.sidebar-open .mainContent {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* CACHE LA SIDEBAR DESKTOP */
+  .sidebarTop,
+  .sidebarBottom,
+  .sidebarText,
+  .sidebarUser,
+  .sidebarToggle {
+    display: none !important;
+  }
+
+  /* BARRE DU BAS MOBILE */
+  .sidebar,
+  .sidebar.collapsed,
+  .appShell.sidebar-open .sidebar {
+    position: fixed !important;
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 74px !important;
+    padding: 10px !important;
+    border-radius: 24px !important;
+    z-index: 3000 !important;
+    display: block !important;
+    overflow: hidden !important;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 16px 36px rgba(0,0,0,.28);
+  }
+
+  .sidebarNav {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    margin: 0 !important;
+  }
+
+  .navBtn {
+    min-height: 52px !important;
+    height: 52px !important;
+    border-radius: 16px !important;
+    padding: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    text-align: center !important;
+  }
+
+  .navBtn .icon {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+  }
+
+  .navBtn .navLabel {
+    display: block !important;
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+    font-weight: 700 !important;
+    white-space: nowrap;
+  }
+
+  /* HOME */
+  .welcomeBar {
+    margin: 0 0 18px 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .welcomeHero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .welcomeText {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .welcomeTitle {
+    margin: 0 0 8px 0 !important;
+  }
+
+  .welcomeIntro {
+    display: block !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+  }
+
+  .welcomeBrand {
+    display: block !important;
+    font-size: 46px !important;
+    line-height: .95 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .welcomeLead {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+  }
+
+  .welcomeCtas {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+  }
+
+  .bigCta {
+    width: 100% !important;
+    min-height: 50px !important;
+    font-size: 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .welcomeEmoji {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    font-size: 24px !important;
+    margin-top: 2px !important;
+  }
+
+  .homeFeatures {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 14px !important;
+  }
+
+  .homeFeatureCard {
+    min-height: auto !important;
+    padding: 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .homeFeatureCard h3 {
+    font-size: 18px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .homeFeatureCard p {
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* BLOCS GÉNÉRAUX */
+  #quiz,
+  #resultsSection,
+  #favoritesSection,
+  #historySection,
+  #profileSection,
+  #about,
+  #detailSection,
+  #feedback {
+    width: 100% !important;
+    margin: 0 0 18px 0 !important;
+    padding: 16px !important;
+    border-radius: 22px !important;
+  }
+
+  .chips {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .chip {
+    min-height: 56px !important;
+    font-size: 16px !important;
+  }
+
+  .resultsGrid,
+  .profileGridClean {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .wrap {
+    padding: 12px 12px 104px;
+  }
+
+  .sidebar,
+  .sidebar.collapsed,
+  .appShell.sidebar-open .sidebar {
+    left: 8px !important;
+    right: 8px !important;
+    bottom: 8px !important;
+    padding: 8px !important;
+  }
+
+  .sidebarNav {
+    gap: 6px !important;
+  }
+
+  .navBtn {
+    min-height: 50px !important;
+    height: 50px !important;
+    padding: 6px !important;
+  }
+
+  .navBtn .navLabel {
+    font-size: 10px !important;
+  }
+
+  .welcomeBrand {
+    font-size: 40px !important;
+  }
+
+  .welcomeLead {
+    font-size: 15px !important;
+  }
+
+  .bigCta {
+    min-height: 48px !important;
+    font-size: 15px !important;
+  }
+
+  .homeFeatureCard h3 {
+    font-size: 17px !important;
+  }
+
+  .homeFeatureCard p {
+    font-size: 14px !important;
+  }
+}
+
+/* ===== FORCE SIDEBAR DESKTOP ===== */
+@media (min-width: 769px) {
+  .sidebar {
+    width: 280px !important;
+    transition: width 0.25s ease !important;
+    overflow: hidden !important;
+  }
+
+  .sidebar.collapsed {
+    width: 86px !important;
+  }
+
+  .sidebar:not(.collapsed) .navLabel,
+  .sidebar:not(.collapsed) .sidebarText,
+  .sidebar:not(.collapsed) .sidebarUser,
+  .sidebar:not(.collapsed) .sidebarBottom {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .sidebar.collapsed .navLabel,
+  .sidebar.collapsed .sidebarText,
+  .sidebar.collapsed .sidebarUser,
+  .sidebar.collapsed .sidebarBottom {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  .sidebar:not(.collapsed) .navBtn {
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    padding: 0 16px !important;
+  }
+
+  .sidebar.collapsed .navBtn {
+    justify-content: center !important;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+
+  .appShell {
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
+    gap: 18px !important;
+    align-items: start !important;
+  }
+
+  .mainContent {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* =========================================
+   MOBILE FINAL STABLE
+========================================= */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .wrap {
+    padding: 14px 14px 110px;
+  }
+
+  .appShell {
+    display: block !important;
+  }
+
+  .mainContent,
+  .appShell.sidebar-open .mainContent {
+    margin-left: 0 !important;
+    width: 100% !important;
+    filter: none !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+  }
+
+  /* ===== SIDEBAR MOBILE = BARRE DU BAS ===== */
+  .sidebar,
+  .sidebar.collapsed,
+  .appShell.sidebar-open .sidebar {
+    position: fixed !important;
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    top: auto !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 88px !important;
+    padding: 10px !important;
+    border-radius: 24px !important;
+    z-index: 3000 !important;
+    display: block !important;
+    overflow: hidden !important;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 16px 36px rgba(0,0,0,.28);
+  }
+
+  .sidebarTop,
+  .sidebarBottom,
+  .sidebarToggle,
+  .sidebarText,
+  .sidebarUser {
+    display: none !important;
+  }
+
+  .sidebarNav {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    margin: 0 !important;
+  }
+
+  .navBtn {
+    min-height: 58px !important;
+    height: 58px !important;
+    border-radius: 16px !important;
+    padding: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    text-align: center !important;
+  }
+
+  .navBtn .icon {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px !important;
+  }
+
+  .navBtn .navLabel {
+    display: block !important;
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+    font-weight: 700 !important;
+    white-space: nowrap;
+  }
+
+  /* ===== HOME MOBILE ===== */
+  .welcomeBar {
+    margin: 0 0 18px 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .welcomeHero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .welcomeText {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .welcomeTitle {
+    margin: 0 0 8px 0 !important;
+    line-height: .95 !important;
+  }
+
+  .welcomeIntro {
+    display: block !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+  }
+
+  .welcomeBrand {
+    display: block !important;
+    font-size: clamp(38px, 10vw, 52px) !important;
+    line-height: .95 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .welcomeLead {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(15px, 4vw, 17px) !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+  }
+
+  .welcomeCtas {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+  }
+
+  .bigCta {
+    width: 100% !important;
+    min-height: 50px !important;
+    font-size: clamp(15px, 4vw, 16px) !important;
+    border-radius: 18px !important;
+  }
+
+  .welcomeEmoji {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    font-size: clamp(22px, 6vw, 28px) !important;
+    margin-top: 2px !important;
+  }
+
+  .homeFeatures {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 14px !important;
+  }
+
+  .homeFeatureCard {
+    min-height: auto !important;
+    padding: 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .homeFeatureCard h3 {
+    font-size: clamp(17px, 4.5vw, 19px) !important;
+    margin-bottom: 6px !important;
+  }
+
+  .homeFeatureCard p {
+    font-size: clamp(14px, 3.8vw, 16px) !important;
+    line-height: 1.35 !important;
+  }
+
+  /* ===== BLOCS GÉNÉRAUX ===== */
+  #quiz,
+  #resultsSection,
+  #favoritesSection,
+  #historySection,
+  #profileSection,
+  #about,
+  #detailSection,
+  #feedback {
+    width: 100% !important;
+    margin: 0 0 18px 0 !important;
+    padding: 16px !important;
+    border-radius: 22px !important;
+  }
+
+  .quizTop,
+  .resultsTop,
+  .topRow {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .progressWrap,
+  .progressBar {
+    width: 100% !important;
+  }
+
+  .step h3 {
+    font-size: clamp(20px, 5vw, 24px) !important;
+    line-height: 1.15 !important;
+  }
+
+  .chips {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .chip {
+    min-height: 56px !important;
+    font-size: clamp(15px, 4vw, 17px) !important;
+  }
+
+  .nav {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .nav .btn,
+  .resultsActions .btn {
+    width: 100% !important;
+  }
+
+  .resultsActions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .summaryBadges {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .resultsGrid,
+  .profileGridClean {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .detailLayout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .detailPosterWrap {
+    max-width: 220px !important;
+  }
+
+  .modalCard {
+    width: calc(100% - 24px) !important;
+    max-width: 100% !important;
+    padding: 16px !important;
+    border-radius: 20px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .wrap {
+    padding: 12px 12px 104px;
+  }
+
+  .sidebar,
+  .sidebar.collapsed,
+  .appShell.sidebar-open .sidebar {
+    left: 8px !important;
+    right: 8px !important;
+    bottom: 8px !important;
+    padding: 8px !important;
+  }
+
+  .sidebarNav {
+    gap: 6px !important;
+  }
+
+  .navBtn {
+    min-height: 54px !important;
+    height: 54px !important;
+    padding: 6px !important;
+  }
+
+  .navBtn .navLabel {
+    font-size: 10px !important;
+  }
+
+  .welcomeBrand {
+    font-size: 40px !important;
+  }
+
+  .welcomeLead {
+    font-size: 15px !important;
+  }
+
+  .bigCta {
+    min-height: 48px !important;
+    font-size: 15px !important;
+  }
+
+  .homeFeatureCard h3 {
+    font-size: 17px !important;
+  }
+
+  .homeFeatureCard p {
+    font-size: 14px !important;
+  }
+
+  .step h3 {
+    font-size: 20px !important;
+  }
+
+  .chip {
+    min-height: 54px !important;
+    font-size: 15px !important;
+  }
+}
