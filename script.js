@@ -791,7 +791,6 @@ const surpriseBtnResults = document.getElementById("surpriseBtnResults");
 
 const homeSection = document.getElementById("homeSection");
 const homeBtn = document.getElementById("homeBtn");
-const menuBtn = document.getElementById("menuBtn");
 
 function updateHeroMoodLine(mood) {
   if (!heroMoodLine) return;
@@ -2212,8 +2211,15 @@ feedbackForm.addEventListener("submit", async (e) => {
 
 if (sidebar && sidebarToggle && appShell) {
   sidebarToggle.addEventListener("click", () => {
-    sidebar.classList.toggle("collapsed");
-    appShell.classList.toggle("sidebar-open");
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      sidebar.classList.toggle("mobile-open");
+      appShell.classList.toggle("sidebar-open");
+    } else {
+      sidebar.classList.toggle("collapsed");
+      appShell.classList.toggle("sidebar-open");
+    }
   });
 }
 
@@ -2246,8 +2252,8 @@ if (toggleBtn && sidebar) {
   });
 }
 
-if (menuBtn && sidebar) {
-  menuBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-  });
-}
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    sidebar?.classList.remove("mobile-open");
+  }
+});
