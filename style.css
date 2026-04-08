@@ -6505,3 +6505,233 @@ img {
     font-size: 15px !important;
   }
 }
+
+/* ===== MOBILE NAV PROPRE ===== */
+.mobileBottomNav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    padding: 16px 16px 110px;
+  }
+
+  .appShell {
+    display: block !important;
+  }
+
+  .mainContent,
+  .appShell.sidebar-open .mainContent {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* on masque complètement la sidebar desktop sur mobile */
+  .sidebar {
+    display: none !important;
+  }
+
+  /* vraie barre mobile */
+  .mobileBottomNav {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 4000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 10px;
+    border-radius: 24px;
+    background: rgba(32, 20, 36, 0.72);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 16px 36px rgba(0,0,0,.28);
+  }
+
+  .mobileNavBtn {
+    min-height: 56px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 16px;
+    background: rgba(255,255,255,.04);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font: inherit;
+    font-weight: 700;
+  }
+
+  .mobilePrimary {
+    background: #f5de8b;
+    color: #17120d;
+    border-color: transparent;
+  }
+
+  .mobileIcon {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .mobileLabel {
+    font-size: 11px;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  /* home mobile */
+  .welcomeBar {
+    margin: 0 0 18px 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .welcomeHero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .welcomeText {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .welcomeTitle {
+    margin: 0 0 8px 0 !important;
+  }
+
+  .welcomeIntro {
+    display: block !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+  }
+
+  .welcomeBrand {
+    display: block !important;
+    font-size: clamp(40px, 10vw, 54px) !important;
+    line-height: .95 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .welcomeLead {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(15px, 4vw, 17px) !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+  }
+
+  .welcomeCtas {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+  }
+
+  .bigCta {
+    width: 100% !important;
+    min-height: 52px !important;
+    font-size: 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .welcomeEmoji {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    font-size: 24px !important;
+    margin-top: 4px !important;
+  }
+
+  .homeFeatures {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 14px !important;
+  }
+
+  .homeFeatureCard {
+    padding: 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .homeFeatureCard h3 {
+    font-size: 18px !important;
+  }
+
+  .homeFeatureCard p {
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+  }
+
+  #quiz,
+  #resultsSection,
+  #favoritesSection,
+  #historySection,
+  #profileSection,
+  #about,
+  #detailSection,
+  #feedback {
+    width: 100% !important;
+    margin: 0 0 18px 0 !important;
+    padding: 16px !important;
+    border-radius: 22px !important;
+  }
+
+  .chips {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .chip {
+    min-height: 56px !important;
+    font-size: 16px !important;
+  }
+
+  .resultsGrid,
+  .profileGridClean {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .wrap {
+    padding: 12px 12px 104px;
+  }
+
+  .mobileBottomNav {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .mobileNavBtn {
+    min-height: 52px;
+  }
+
+  .mobileLabel {
+    font-size: 10px;
+  }
+
+  .welcomeBrand {
+    font-size: 40px !important;
+  }
+
+  .welcomeLead {
+    font-size: 15px !important;
+  }
+}

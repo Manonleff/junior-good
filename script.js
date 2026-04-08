@@ -614,6 +614,11 @@ async function updateAuthUI() {
     logoutBtn.classList.remove("hidden");
 
     authBtn.classList.add("hidden");
+
+    mobileHistoryBtn?.classList.remove("hidden");
+mobileFavoritesBtn?.classList.remove("hidden");
+mobileProfileBtn?.classList.remove("hidden");
+
   } else {
     userBadge.classList.add("hidden");
 
@@ -624,6 +629,10 @@ async function updateAuthUI() {
     logoutBtn.classList.add("hidden");
 
     authBtn.classList.remove("hidden");
+
+    mobileHistoryBtn?.classList.add("hidden");
+mobileFavoritesBtn?.classList.add("hidden");
+mobileProfileBtn?.classList.add("hidden");
 
     favoriteKeys = new Set();
     favoriteRows = [];
@@ -791,6 +800,13 @@ const surpriseBtnResults = document.getElementById("surpriseBtnResults");
 
 const homeSection = document.getElementById("homeSection");
 const homeBtn = document.getElementById("homeBtn");
+
+const mobileHomeBtn = document.getElementById("mobileHomeBtn");
+const mobileStartBtn = document.getElementById("mobileStartBtn");
+const mobileHistoryBtn = document.getElementById("mobileHistoryBtn");
+const mobileFavoritesBtn = document.getElementById("mobileFavoritesBtn");
+const mobileProfileBtn = document.getElementById("mobileProfileBtn");
+const mobileAboutBtn = document.getElementById("mobileAboutBtn");
 
 function updateHeroMoodLine(mood) {
   if (!heroMoodLine) return;
@@ -2229,3 +2245,26 @@ if (surpriseBtnResults) {
   });
 }
 
+if (mobileHomeBtn && homeBtn) {
+  mobileHomeBtn.addEventListener("click", () => homeBtn.click());
+}
+
+if (mobileStartBtn && startBtn) {
+  mobileStartBtn.addEventListener("click", () => startBtn.click());
+}
+
+if (mobileHistoryBtn && historyBtn) {
+  mobileHistoryBtn.addEventListener("click", () => historyBtn.click());
+}
+
+if (mobileFavoritesBtn && favoritesBtn) {
+  mobileFavoritesBtn.addEventListener("click", () => favoritesBtn.click());
+}
+
+if (mobileProfileBtn && profileBtn) {
+  mobileProfileBtn.addEventListener("click", () => profileBtn.click());
+}
+
+if (mobileAboutBtn && aboutBtn) {
+  mobileAboutBtn.addEventListener("click", () => aboutBtn.click());
+}
