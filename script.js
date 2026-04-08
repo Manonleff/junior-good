@@ -614,11 +614,6 @@ async function updateAuthUI() {
     logoutBtn.classList.remove("hidden");
 
     authBtn.classList.add("hidden");
-
-    mobileHistoryBtn?.classList.remove("hidden");
-mobileFavoritesBtn?.classList.remove("hidden");
-mobileProfileBtn?.classList.remove("hidden");
-
   } else {
     userBadge.classList.add("hidden");
 
@@ -629,10 +624,6 @@ mobileProfileBtn?.classList.remove("hidden");
     logoutBtn.classList.add("hidden");
 
     authBtn.classList.remove("hidden");
-
-    mobileHistoryBtn?.classList.add("hidden");
-mobileFavoritesBtn?.classList.add("hidden");
-mobileProfileBtn?.classList.add("hidden");
 
     favoriteKeys = new Set();
     favoriteRows = [];
@@ -800,13 +791,6 @@ const surpriseBtnResults = document.getElementById("surpriseBtnResults");
 
 const homeSection = document.getElementById("homeSection");
 const homeBtn = document.getElementById("homeBtn");
-
-const mobileHomeBtn = document.getElementById("mobileHomeBtn");
-const mobileStartBtn = document.getElementById("mobileStartBtn");
-const mobileHistoryBtn = document.getElementById("mobileHistoryBtn");
-const mobileFavoritesBtn = document.getElementById("mobileFavoritesBtn");
-const mobileProfileBtn = document.getElementById("mobileProfileBtn");
-const mobileAboutBtn = document.getElementById("mobileAboutBtn");
 
 function updateHeroMoodLine(mood) {
   if (!heroMoodLine) return;
@@ -2215,12 +2199,69 @@ feedbackForm.addEventListener("submit", async (e) => {
   }
 })();
 
-// Sidebar toggle
-
+// Sidebar toggle propre desktop + mobile
 if (sidebar && sidebarToggle && appShell) {
-  sidebarToggle.addEventListener("click", () => {
+  const MOBILE_BREAKPOINT = 768;
+
+  function isMobile() {
+    return window.innerWidth <= MOBILE_BREAKPOINT;
+  }
+
+  function openSidebar() {
+    sidebar.classList.remove("collapsed");
+    appShell.classList.add("sidebar-open");
+    document.body.classList.add("sidebar-is-open");
+  }
+
+  function closeSidebar() {
+    if (isMobile()) {
+      sidebar.classList.add("collapsed");
+      appShell.classList.remove("sidebar-open");
+      document.body.classList.remove("sidebar-is-open");
+    }
+  }
+
+  function toggleSidebar() {
+    const willOpen = sidebar.classList.contains("collapsed");
+
     sidebar.classList.toggle("collapsed");
-    appShell.classList.toggle("sidebar-open");
+    appShell.classList.toggle("sidebar-open", willOpen);
+
+    if (willOpen) {
+      document.body.classList.add("sidebar-is-open");
+    } else {
+      document.body.classList.remove("sidebar-is-open");
+    }
+  }
+
+  sidebarToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleSidebar();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!isMobile()) return;
+    if (sidebar.classList.contains("collapsed")) return;
+    if (sidebar.contains(e.target)) return;
+    closeSidebar();
+  });
+
+  window.addEventListener("resize", () => {
+    if (!isMobile()) {
+      document.body.classList.remove("sidebar-is-open");
+      appShell.classList.remove("sidebar-open");
+    } else {
+      sidebar.classList.add("collapsed");
+      appShell.classList.remove("sidebar-open");
+      document.body.classList.remove("sidebar-is-open");
+    }
+  });
+
+  [homeBtn, startBtn, aboutBtn, favoritesBtn, profileBtn, historyBtn].forEach((btn) => {
+    if (!btn) return;
+    btn.addEventListener("click", () => {
+      closeSidebar();
+    });
   });
 }
 
@@ -2245,26 +2286,3 @@ if (surpriseBtnResults) {
   });
 }
 
-if (mobileHomeBtn && homeBtn) {
-  mobileHomeBtn.addEventListener("click", () => homeBtn.click());
-}
-
-if (mobileStartBtn && startBtn) {
-  mobileStartBtn.addEventListener("click", () => startBtn.click());
-}
-
-if (mobileHistoryBtn && historyBtn) {
-  mobileHistoryBtn.addEventListener("click", () => historyBtn.click());
-}
-
-if (mobileFavoritesBtn && favoritesBtn) {
-  mobileFavoritesBtn.addEventListener("click", () => favoritesBtn.click());
-}
-
-if (mobileProfileBtn && profileBtn) {
-  mobileProfileBtn.addEventListener("click", () => profileBtn.click());
-}
-
-if (mobileAboutBtn && aboutBtn) {
-  mobileAboutBtn.addEventListener("click", () => aboutBtn.click());
-}
