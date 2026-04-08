@@ -791,6 +791,7 @@ const surpriseBtnResults = document.getElementById("surpriseBtnResults");
 
 const homeSection = document.getElementById("homeSection");
 const homeBtn = document.getElementById("homeBtn");
+const menuBtn = document.getElementById("menuBtn");
 
 function updateHeroMoodLine(mood) {
   if (!heroMoodLine) return;
@@ -2241,6 +2242,12 @@ const toggleBtn = document.getElementById("menuBtn");
 
 if (toggleBtn && sidebar) {
   toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+  });
+}
+
+if (menuBtn && sidebar) {
+  menuBtn.addEventListener("click", () => {
     sidebar.classList.toggle("open");
   });
 }
