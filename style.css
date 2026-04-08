@@ -5128,36 +5128,33 @@ img {
   .sidebar {
     position: fixed !important;
     top: 12px !important;
-    left: 12px !important;
+    left: 10px !important;
     bottom: 12px !important;
-    width: 72px !important;
-    height: auto !important;
+    width: 58px !important;
     min-height: calc(100vh - 24px) !important;
-    padding: 12px 8px !important;
-    border-radius: 24px !important;
+    padding: 10px 6px !important;
+    border-radius: 22px !important;
     z-index: 3000 !important;
     overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
-    transition: width .25s ease !important;
+    transition: width .22s ease !important;
   }
 
   .sidebar.collapsed {
-    width: 72px !important;
+    width: 58px !important;
   }
 
   .appShell.sidebar-open .sidebar {
-    width: 230px !important;
+    width: 175px !important;
   }
 
   .sidebarToggle {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 44px !important;
-    height: 44px !important;
-    margin: 0 auto 14px auto !important;
-    border-radius: 14px !important;
+    width: 38px !important;
+    height: 38px !important;
+    margin: 0 auto 10px auto !important;
+    border-radius: 12px !important;
+    font-size: 18px !important;
   }
 
   .sidebarTop {
@@ -5182,18 +5179,21 @@ img {
     align-items: stretch !important;
   }
 
-  .navBtn {
-    width: 100% !important;
-    min-height: 52px !important;
-    border-radius: 16px !important;
-    display: flex !important;
-    align-items: center !important;
+    .navBtn {
+    min-height: 44px !important;
+    border-radius: 14px !important;
   }
 
   .sidebar.collapsed .navBtn {
-    justify-content: center !important;
+    width: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
     padding: 0 !important;
-    gap: 0 !important;
+    justify-content: center !important;
+  }
+
+   .sidebar.collapsed .icon {
+    font-size: 20px !important;
   }
 
   .appShell.sidebar-open .navBtn {
@@ -5218,11 +5218,11 @@ img {
 
   /* CONTENU */
   .mainContent,
-  .appShell.sidebar-open .mainContent {
-    margin-left: 88px !important;
-    width: calc(100% - 88px) !important;
-    min-width: 0 !important;
-  }
+.appShell.sidebar-open .mainContent {
+  margin-left: 70px !important;
+  width: calc(100% - 70px) !important;
+  min-width: 0 !important;
+}
 
   /* HOME */
   .welcomeBar {
@@ -5410,10 +5410,10 @@ img {
     width: 210px !important;
   }
 
-  .mainContent,
+    .mainContent,
   .appShell.sidebar-open .mainContent {
-    margin-left: 82px !important;
-    width: calc(100% - 82px) !important;
+    margin-left: 66px !important;
+    width: calc(100% - 66px) !important;
   }
 
   .welcomeBrand {
@@ -5439,5 +5439,128 @@ img {
 
   .homeFeatureCard p {
     font-size: 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcomeBar {
+    padding: 10px 8px 14px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .welcomeHero {
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+
+  .welcomeTitle {
+    align-items: center !important;
+  }
+
+  .welcomeIntro {
+    font-size: 20px !important;
+  }
+
+  .welcomeBrand {
+    font-size: 54px !important;
+    line-height: .92 !important;
+  }
+
+  .welcomeLead {
+    max-width: 290px !important;
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+    margin: 0 auto !important;
+  }
+
+  .welcomeCtas {
+    max-width: 260px !important;
+    margin: 0 auto !important;
+  }
+
+  .bigCta {
+    min-height: 48px !important;
+    font-size: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .welcomeEmoji {
+    font-size: 24px !important;
+    gap: 10px !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeFeatures {
+    gap: 10px !important;
+    margin-top: 12px !important;
+  }
+
+  .homeFeatureCard {
+    padding: 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .homeFeatureIcon {
+    font-size: 18px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .homeFeatureCard h3 {
+    font-size: 15px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .homeFeatureCard p {
+    font-size: 12.5px !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .appShell.sidebar-open .sidebar {
+    padding: 12px !important;
+    border-radius: 24px !important;
+  }
+
+  .appShell.sidebar-open .sidebarTitle {
+    font-size: 18px !important;
+    line-height: 1 !important;
+  }
+
+  .appShell.sidebar-open .sidebarSubtitle {
+    font-size: 11px !important;
+    margin-top: 4px !important;
+  }
+
+  .appShell.sidebar-open .userBadge {
+    font-size: 11px !important;
+    padding: 8px 10px !important;
+    word-break: break-word !important;
+  }
+
+  .appShell.sidebar-open .navBtn {
+    min-height: 42px !important;
+    padding: 0 10px !important;
+    gap: 8px !important;
+    font-size: 13px !important;
+  }
+
+  .appShell.sidebar-open .icon {
+    font-size: 18px !important;
+  }
+
+  .appShell.sidebar-open .navLabel {
+    font-size: 13px !important;
+  }
+
+  .appShell.sidebar-open .sidebarBottom .btn {
+    min-height: 42px !important;
+    font-size: 13px !important;
   }
 }
