@@ -2236,3 +2236,11 @@ if (surpriseBtnResults) {
     await openDetail(randomPick.index, lastUser);
   });
 }
+
+const toggleBtn = document.getElementById("menuBtn");
+
+if (toggleBtn && sidebar) {
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+  });
+}
